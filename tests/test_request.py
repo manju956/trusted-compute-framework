@@ -1,4 +1,4 @@
-# Copyright 2018 Intel Corporation
+# Copyright 2019 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ from builtins import bytes
 
 from service_client.generic import GenericServiceClient
 import crypto.crypto as crypto
-import utils.utility as helper
-import utils.signature as signature
+import utility.utility as helper
+import utility.signature as signature
 import worker.worker_details as worker
 from shared_kv.shared_kv_interface import KvStorage
 import logging

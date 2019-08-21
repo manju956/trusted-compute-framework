@@ -1,4 +1,4 @@
-# Copyright 2018 Intel Corporation
+# Copyright 2019 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ import logging
 
 from service_client.generic import GenericServiceClient
 import crypto.crypto as crypto
-import utils.signature as signature
+import utility.signature as signature
 import worker.worker_details as worker
 from shared_kv.shared_kv_interface import KvStorage
-import utils.utility as enclave_helper
+import utility.utility as enclave_helper
 import utility.file_utils as futils
 
 logger = logging.getLogger(__name__)
@@ -62,11 +62,15 @@ def LocalMain(config) :
 
             #If Client request is WorkOrderSubmit,a requester payload's signature with the requester private signing key is generated.
             if "WorkOrderSubmit" in input_json_str1 :
-                # Update workorder ID and workerId
+                # Update workOrderId , workerId and workloadId
                 input_json_obj = json.loads(input_json_str1)
                 wo_id = hex(random.randint(1, 2**64 - 1))
                 input_json_obj["params"]["workOrderId"] = wo_id
                 input_json_obj["params"]["workerId"] = worker_obj.worker_id
+                # Convert workloadId to a hex string and update the request
+                workload_id = input_json_obj["params"]["workloadId"]
+                workload_id_hex = workload_id.encode("UTF-8").hex()
+                input_json_obj["params"]["workloadId"] = workload_id_hex
                 input_json_str1 = json.dumps(input_json_obj)
 
                 #Generate session iv an encrypted session key
@@ -85,7 +89,8 @@ def LocalMain(config) :
                    #Retrieving the worker id from the "WorkerRetrieve" response and update the worker id information for the further json requests
                    if "result" in response and "ids" in response["result"].keys():
                        input_json_final = json.loads(input_json_str1)
-                       input_json_final["params"]["workerId"] = enclave_helper.strip_begin_end_key(response["result"]["ids"][0])
+                       worker_id = response["result"]["ids"][0]
+                       input_json_final["params"]["workerId"] = worker_id
                        input_json_str1 = json.dumps(input_json_final)
                        logger.info("**********Worker details Updated with Worker ID*********\n%s\n", input_json_str1)
             #-----------------------------------------------------------------------------------
@@ -120,16 +125,18 @@ def LocalMain(config) :
                 try:
                     if sig_bool > 0:
                         logger.info("Signature Verified")
+                        enclave_helper.decrypted_response(json.dumps(response), encrypted_session_key)
                     else :
                         logger.info("Signature Failed")
+                        exit(1)
                 except:
                         logger.error("ERROR: Failed to analyze Signature Verification")
+                        exit(1)
 
-                enclave_helper.decrypted_response(json.dumps(response), encrypted_session_key)
             #----------------------------------------------------------------------------------
     else :
         logger.info("Input Request %s", input_json_str)
-        response = uri_client._postmsg(input_json_str_1)
+        response = uri_client._postmsg(input_json_str)
         logger.info("Received Response : %s , \n \n ", response);
 
     exit(0)

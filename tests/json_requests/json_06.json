@@ -9,9 +9,9 @@
         "notifyUri": "notifyuri",
         "workOrderId": "0x11ABCE",
         "workerId":"",
-        "workloadId": "0x2345",
+        "workloadId": "echo-result",
         "requesterId": "0x3456",
-        "workerEncryptionKey": "0x6789",
+        "workerEncryptionKey": "",
         "dataEncryptionAlgorithm": "AES-GCM-256",
         "encryptedSessionKey": "sessionkey",
         "sessionKeyIv": "Iv",
@@ -20,28 +20,8 @@
         "requesterSignature": "",
         "inData": [
                    {"index": 1,
-                    "dataHash": "12ab34cd",
+                    "dataHash": "",
                     "data": "Hello world",
-                    "encryptedDataEncryptionKey": "",
-                    "iv": ""
-                   },
-                   {"index": 0,
-                    "dataHash": "dcba4321",
-                    "data": "echo-result:",
-                    "encryptedDataEncryptionKey": "",
-                    "iv": ""
-                   }
-        ],
-        "outData": [
-                   {"index": 1,
-                    "dataHash": "12ab34cd",
-                    "data": "",
-                    "encryptedDataEncryptionKey": "",
-                    "iv": ""
-                   },
-                   {"index": 0,
-                    "dataHash": "dcba4321",
-                    "data": "",
                     "encryptedDataEncryptionKey": "",
                     "iv": ""
                    }

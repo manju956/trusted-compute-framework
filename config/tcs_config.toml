@@ -54,6 +54,7 @@ ias_api_key = "7eff11484faabcd7b5d62006f4611122"
 
 #enclave library to be used
 enclave_library = "libtcf-enclave.signed.so"
+enclave_library_path = "tc/sgx/trusted_worker_manager/enclave/build/lib/"
 
 # -------------------------------------------------------------
 # TCS Worker configuration details
@@ -66,8 +67,9 @@ WorkOrderSyncUri = "http://localhost:8080"
 WorkOrderAsyncUri = "http://localhost:8080"
 WorkOrderPullUri = "http://localhost:8080"
 WorkOrderNotifyUri = "http://localhost:8080"
-ApplicationTypeId = "Application_01"
-OrganizationId = "Organization_01"
+# Replace ApplicationTypeId and OrganizationId with real hexadecimal values
+ApplicationTypeId = "11aa22bb33cc44dd"
+OrganizationId = "aabbcc1234ddeeff"
 
 # URI used by worker to process work order receipts
 ReceiptInvocationUri = "http://localhost:8080"
