@@ -60,7 +60,7 @@ for folder in "${INPUT_FOLDERS[@]}"
 do
     yell "Start testing folder:: $folder ............"
     yell "#------------------------------------------------------------------------------------------------"
-    # 5seconds delay is introduced for user readability
+    # Delay is introduced for user readability
     sleep 5s
     try python3 ${TCF_HOME}/tests/Demo.py \
         --logfile __screen__ --loglevel warn \
