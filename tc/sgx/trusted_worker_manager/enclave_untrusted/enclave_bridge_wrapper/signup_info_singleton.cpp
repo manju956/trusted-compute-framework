@@ -16,24 +16,22 @@
 #include "tcf_error.h"
 #include "swig_utils.h"
 
-#include "signup_kme.h"
-#include "signup_info_kme.h"
+#include "signup_singleton.h"
+#include "signup_info_singleton.h"
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SignupInfo* deserialize_signup_info_kme(
+SignupInfo* deserialize_signup_info(
     const std::string&  serialized_signup_info) {
-    SignupInfo* signup_info = new SignupInfoKME();
+    SignupInfo* signup_info = new SignupInfoSingleton();
     tcf_err_t result = signup_info->DeserializeSignupInfo(
         serialized_signup_info);
+
     return signup_info;
 }  // deserialize_signup_info
 
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-std::map<std::string, std::string> SignupInfoKME::CreateEnclaveData(
-    const std::string& in_ext_data,
-    const std::string& in_ext_data_signature) {
-
+std::map<std::string, std::string> SignupInfoSingleton::CreateEnclaveData() {
     tcf_err_t presult;
     // Create some buffers for receiving the output parameters
     // CreateEnclaveData will resize appropriately
@@ -41,11 +39,10 @@ std::map<std::string, std::string> SignupInfoKME::CreateEnclaveData(
     Base64EncodedString sealed_enclave_data;
     Base64EncodedString enclave_quote;
 
+    SignupDataSingleton signup_data;
     // Create the signup data
-    SignupDataKME signup_data;
     presult = signup_data.CreateEnclaveData(
-        in_ext_data, in_ext_data_signature, public_enclave_data,
-        sealed_enclave_data, enclave_quote);
+        public_enclave_data, sealed_enclave_data, enclave_quote);
     ThrowTCFError(presult);
 
     // Parse the json and save the verifying and encryption keys
@@ -53,7 +50,7 @@ std::map<std::string, std::string> SignupInfoKME::CreateEnclaveData(
     std::string encryption_key;
     std::string encryption_key_signature;
 
-    presult = SignupInfoKME::DeserializePublicEnclaveData(
+    presult = SignupInfo::DeserializePublicEnclaveData(
         public_enclave_data.str(),
         verifying_key,
         encryption_key,
@@ -69,16 +66,15 @@ std::map<std::string, std::string> SignupInfoKME::CreateEnclaveData(
     result["enclave_quote"] = enclave_quote;
 
     return result;
-}  // SignupInfoKME::CreateEnclaveDataKME
+}
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-std::map<std::string, std::string> SignupInfoKME::UnsealEnclaveData() {
+std::map<std::string, std::string> SignupInfoSingleton::UnsealEnclaveData() {
     tcf_err_t presult;
-
     // UnsealEnclaveData will resize appropriately
     StringArray public_enclave_data(0);
 
-    SignupDataKME signup_data;
+    SignupDataSingleton signup_data;
     presult = signup_data.UnsealEnclaveData(
         public_enclave_data);
     ThrowTCFError(presult);
@@ -88,7 +84,7 @@ std::map<std::string, std::string> SignupInfoKME::UnsealEnclaveData() {
     std::string encryption_key;
     std::string encryption_key_signature;
 
-    presult = SignupInfoKME::DeserializePublicEnclaveData(
+    presult = SignupInfo::DeserializePublicEnclaveData(
         public_enclave_data.str(),
         verifying_key,
         encryption_key,
@@ -104,14 +100,12 @@ std::map<std::string, std::string> SignupInfoKME::UnsealEnclaveData() {
 }  // UnsealEnclaveData
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-size_t SignupInfoKME::VerifyEnclaveInfo(
-    const std::string& enclave_info,
-    const std::string& mr_enclave,
-    const std::string& ext_data) {
+size_t SignupInfoSingleton::VerifyEnclaveInfo(const std::string& enclave_info,
+    const std::string& mr_enclave) {
 
-    SignupDataKME signup_data;
+    SignupDataSingleton signup_data;
     tcf_err_t result = signup_data.VerifyEnclaveInfo(
-        enclave_info, mr_enclave, ext_data);
+        enclave_info, mr_enclave);
     size_t verify_status = result;
     return verify_status;
-}  // VerifyEnclaveInfoKME
+}  // VerifyEnclaveInfo

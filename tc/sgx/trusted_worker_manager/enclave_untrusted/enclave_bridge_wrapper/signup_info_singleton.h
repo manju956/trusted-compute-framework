@@ -17,20 +17,20 @@
 
 #include "signup_info.h"
 
-class SignupInfoWPE : public SignupInfo {
+class SignupInfoSingleton : public SignupInfo {
 public:
 
-    SignupInfoWPE() {}
+    SignupInfoSingleton() {}
 
-    std::map<std::string, std::string> CreateEnclaveData(
-        const std::string& in_ext_data,
-        const std::string& in_ext_data_signature,
-        const std::string& in_kme_attestation);
+    std::map<std::string, std::string> CreateEnclaveData();
+
+    std::map<std::string, std::string> UnsealEnclaveData();
 
     size_t VerifyEnclaveInfo(
         const std::string& enclaveInfo,
-        const std::string& mr_enclave,
-        const std::string& ext_data);
+        const std::string& mr_enclave);
+
+    std::string sealed_signup_data;
 
 private:
     /*
@@ -38,8 +38,8 @@ private:
     canonical representation of the signup info.
     */
     std::string serialized_;
-};  // SignupInfoSingleton
+};  // class SignupInfoSingleton
 
-SignupInfo* deserialize_signup_info_wpe(
+SignupInfo* deserialize_signup_info(
     const std::string& serialized_signup_info);
 
