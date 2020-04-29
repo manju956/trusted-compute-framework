@@ -17,17 +17,17 @@
 
 #include "signup_info.h"
 
-class SignupInfoKME : public SignupInfo {
+class SignupInfoSingleton : public SignupInfo {
 public:
-    friend SignupInfoKME* deserialize_signup_info(const std::string& s);
+    friend SignupInfoSingleton* deserialize_signup_info(const std::string& s);
 
     std::string sealed_signup_data;
 
 protected:
-    //tcf_err_t DeserializeSignupInfo(
-    //    const std::string& serialized_signup_info);
+    tcf_err_t DeserializeSignupInfo(
+        const std::string& serialized_signup_info);
 
-    SignupInfoKME(const std::string& serializedSignupInfo);
+    SignupInfoSingleton(const std::string& serializedSignupInfo);
 
 private:
     /*
@@ -35,18 +35,15 @@ private:
     canonical representation of the signup info.
     */
     std::string serialized_;
-};  // SignupInfoSingleton
+};  // class SignupInfoSingleton
 
-SignupInfoKME* deserialize_signup_info_kme(
+SignupInfoSingleton* deserialize_signup_info(
     const std::string& serialized_signup_info);
 
-std::map<std::string, std::string> CreateEnclaveDataKME(
-    const std::string& in_ext_data,
-    const std::string& in_ext_data_signature);
+std::map<std::string, std::string> CreateEnclaveData();
 
 std::map<std::string, std::string> UnsealEnclaveData();
 
-size_t VerifyEnclaveInfoKME(
+size_t VerifyEnclaveInfo(
     const std::string& enclaveInfo,
-    const std::string& mr_enclave,
-    const std::string& ext_data);
+    const std::string& mr_enclave);

@@ -19,24 +19,19 @@
 #include <stdlib.h>
 
 #include "types.h"
+#include "signup.h"
 
-namespace tcf {
-    namespace enclave_api {
-        namespace enclave_data_kme {
-            tcf_err_t CreateEnclaveDataKME(
-                const std::string& inExtData,
-                const std::string& inExtDataSignature,
-                StringArray& outPublicEnclaveData,
-                Base64EncodedString& outSealedEnclaveData,
-                Base64EncodedString& outEnclaveQuote);
+class SignupDataKME : public SignupData {
+public:
+    tcf_err_t CreateEnclaveDataKME(
+            const std::string& inExtData,
+            const std::string& inExtDataSignature,
+            StringArray& outPublicEnclaveData,
+            Base64EncodedString& outSealedEnclaveData,
+            Base64EncodedString& outEnclaveQuote);
 
-            tcf_err_t VerifyEnclaveInfoKME(
-                const std::string& enclaveInfo,
-                const std::string& mr_enclave,
-                const std::string& ext_data);
-            // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        }  /* namespace enclave_data_kme */
-
-    }  /* namespace enclave_api */
-
-}  /* namespace tcf */
+        tcf_err_t VerifyEnclaveInfoKME(
+            const std::string& enclaveInfo,
+            const std::string& mr_enclave,
+            const std::string& ext_data);
+};  // SignupDataKME

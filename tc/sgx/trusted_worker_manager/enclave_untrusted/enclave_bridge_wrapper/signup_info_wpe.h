@@ -15,8 +15,28 @@
 
 #pragma once
 
-#include <map>
-#include <string>
+#include "signup_info.h"
+
+class SignupInfoWPE : public SignupInfo {
+public:
+    friend SignupInfoWPE* deserialize_signup_info(const std::string& s);
+
+protected:
+    //tcf_err_t DeserializeSignupInfo(
+    //    const std::string& serialized_signup_info);
+
+    SignupInfoWPE(const std::string& serializedSignupInfo);
+
+private:
+    /*
+    Json serialization of the signup info Parameters, this serves as the
+    canonical representation of the signup info.
+    */
+    std::string serialized_;
+};  // SignupInfoSingleton
+
+SignupInfoWPE* deserialize_signup_info_kme(
+    const std::string& serialized_signup_info);
 
 std::map<std::string, std::string> CreateEnclaveDataWPE(
     const std::string& in_ext_data,

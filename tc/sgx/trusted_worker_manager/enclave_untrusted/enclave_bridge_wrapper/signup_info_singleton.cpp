@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include "signup_kme.h"
-#include "signup_info_kme.h"
+#include "signup_singleton.h"
+#include "signup_info_singleton.h"
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SignupInfoKME::SignupInfoKME(
+SignupInfoSingleton::SignupInfoSingleton(
     const std::string& serialized_signup_info) :
     serialized_(serialized_signup_info) {
 
@@ -26,19 +26,16 @@ SignupInfoKME::SignupInfoKME(
     tcf_err_t result = signup_info.DeserializeSignupInfo(
         serialized_signup_info);
     ThrowTCFError(result);
-}  // SignupInfo::SignupInfo
+}  // SignupInfoSingleton
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SignupInfoKME* deserialize_signup_info_kme(
+SignupInfoSingleton* deserialize_signup_info(
     const std::string&  serialized_signup_info) {
-    return new SignupInfoKME(serialized_signup_info);
+    return new SignupInfoSingleton(serialized_signup_info);
 }  // deserialize_signup_info
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-std::map<std::string, std::string> CreateEnclaveDataKME(
-    const std::string& in_ext_data,
-    const std::string& in_ext_data_signature) {
-
+std::map<std::string, std::string> CreateEnclaveData() {
     tcf_err_t presult;
     // Create some buffers for receiving the output parameters
     // CreateEnclaveData will resize appropriately
@@ -46,11 +43,10 @@ std::map<std::string, std::string> CreateEnclaveDataKME(
     Base64EncodedString sealed_enclave_data;
     Base64EncodedString enclave_quote;
 
+    SignupDataSingleton signup_data;
     // Create the signup data
-    SignupDataKME signup_data;
     presult = signup_data.CreateEnclaveData(
-        in_ext_data, in_ext_data_signature, public_enclave_data,
-        sealed_enclave_data, enclave_quote);
+        public_enclave_data, sealed_enclave_data, enclave_quote);
     ThrowTCFError(presult);
 
     // Parse the json and save the verifying and encryption keys
@@ -58,7 +54,7 @@ std::map<std::string, std::string> CreateEnclaveDataKME(
     std::string encryption_key;
     std::string encryption_key_signature;
 
-    presult = SignupInfoKME::DeserializePublicEnclaveData(
+    presult = SignupInfo::DeserializePublicEnclaveData(
         public_enclave_data.str(),
         verifying_key,
         encryption_key,
@@ -74,16 +70,15 @@ std::map<std::string, std::string> CreateEnclaveDataKME(
     result["enclave_quote"] = enclave_quote;
 
     return result;
-}  // SignupInfoKME::CreateEnclaveDataKME
+}
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 std::map<std::string, std::string> UnsealEnclaveData() {
     tcf_err_t presult;
-
     // UnsealEnclaveData will resize appropriately
     StringArray public_enclave_data(0);
 
-    SignupDataKME signup_data;
+    SignupDataSingleton signup_data;
     presult = signup_data.UnsealEnclaveData(
         public_enclave_data);
     ThrowTCFError(presult);
@@ -93,7 +88,7 @@ std::map<std::string, std::string> UnsealEnclaveData() {
     std::string encryption_key;
     std::string encryption_key_signature;
 
-    presult = SignupInfoKME::DeserializePublicEnclaveData(
+    presult = SignupInfo::DeserializePublicEnclaveData(
         public_enclave_data.str(),
         verifying_key,
         encryption_key,
@@ -109,14 +104,12 @@ std::map<std::string, std::string> UnsealEnclaveData() {
 }  // UnsealEnclaveData
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-size_t VerifyEnclaveInfoKME(
-    const std::string& enclave_info,
-    const std::string& mr_enclave,
-    const std::string& ext_data) {
+size_t VerifyEnclaveInfo(const std::string& enclave_info,
+    const std::string& mr_enclave) {
 
-    SignupDataKME signup_data;
+    SignupDataSingleton signup_data;
     tcf_err_t result = signup_data.VerifyEnclaveInfo(
-        enclave_info, mr_enclave, ext_data);
+        enclave_info, mr_enclave);
     size_t verify_status = result;
     return verify_status;
-}  // VerifyEnclaveInfoKME
+}  // VerifyEnclaveInfo
