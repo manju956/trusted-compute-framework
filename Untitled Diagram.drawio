@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-08-10T06:07:01.839Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="1GXg62nCoXAoP8KP4vcP" version="13.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-08-10T06:23:39.801Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="E825-BoX4vruLfc9mkwy" version="13.6.0" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-    <mxGraphModel dx="1967" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2310" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,9 +9,6 @@
         </mxCell>
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-1" vertex="1">
           <mxGeometry x="45" y="72" width="10" height="518" as="geometry" />
-        </mxCell>
-        <mxCell id="3nuBFxr9cyL0pnOWT2aG-4" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-1" vertex="1">
-          <mxGeometry x="50" y="120" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-5" value="Singleton/KME&#xa;Trusted Enclave" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="451" y="80" width="100" height="590" as="geometry" />
@@ -78,12 +75,12 @@
         </mxCell>
         <mxCell id="FY-pfb4IiVx_ic1DrDXL-10" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="510" y="465" as="sourcePoint" />
-            <mxPoint x="511" y="435" as="targetPoint" />
+            <mxPoint x="511" y="435" as="sourcePoint" />
+            <mxPoint x="510" y="465" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="580" y="465" />
-              <mxPoint x="580" y="435" />
               <mxPoint x="530" y="435" />
+              <mxPoint x="580" y="435" />
+              <mxPoint x="580" y="465" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -104,17 +101,11 @@
         <mxCell id="FY-pfb4IiVx_ic1DrDXL-19" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-18">
           <mxGeometry x="45" y="72" width="10" height="518" as="geometry" />
         </mxCell>
-        <mxCell id="FY-pfb4IiVx_ic1DrDXL-20" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-18">
-          <mxGeometry x="50" y="120" width="10" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="FY-pfb4IiVx_ic1DrDXL-21" value="Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="-376" y="80" width="100" height="590" as="geometry" />
         </mxCell>
         <mxCell id="FY-pfb4IiVx_ic1DrDXL-22" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-21">
           <mxGeometry x="45" y="72" width="10" height="518" as="geometry" />
-        </mxCell>
-        <mxCell id="FY-pfb4IiVx_ic1DrDXL-23" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-21">
-          <mxGeometry x="50" y="120" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="FY-pfb4IiVx_ic1DrDXL-24" value="Worker details" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
@@ -187,19 +178,19 @@
             <mxPoint x="-124" y="650.0000000000001" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-NnzcmwlUf4twEH-fe_p-23" value="" style="endArrow=classic;html=1;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-1" edge="1">
+        <mxCell id="-NnzcmwlUf4twEH-fe_p-23" value="" style="endArrow=classic;html=1;" parent="1" edge="1" target="3nuBFxr9cyL0pnOWT2aG-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="100" y="300" as="sourcePoint" />
-            <mxPoint x="162" y="310" as="targetPoint" />
+            <mxPoint x="162" y="310" as="sourcePoint" />
+            <mxPoint x="100" y="300" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="120" y="340" />
               <mxPoint x="120" y="310" />
+              <mxPoint x="120" y="340" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="-NnzcmwlUf4twEH-fe_p-24" value="Persiist updated&lt;br&gt;Worker details to KV Storage" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" parent="-NnzcmwlUf4twEH-fe_p-23" connectable="0" vertex="1">
+        <mxCell id="-NnzcmwlUf4twEH-fe_p-24" value="1. Persiist updated&lt;br&gt;&amp;nbsp; &amp;nbsp; Worker details to KV Storage&lt;br&gt;2. Persist Updated Sealed data&amp;nbsp;" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=middle;" parent="-NnzcmwlUf4twEH-fe_p-23" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-48" y="-31" as="offset" />
+            <mxPoint x="-117" y="-41" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
