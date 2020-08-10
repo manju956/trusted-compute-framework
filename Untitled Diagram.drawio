@@ -1,84 +1,205 @@
-<mxfile host="app.diagrams.net" modified="2020-08-10T05:18:53.406Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="717oTA-8gta9TChQ8qAi" version="13.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-08-10T06:07:01.839Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="1GXg62nCoXAoP8KP4vcP" version="13.6.0" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-    <mxGraphModel dx="1632" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1967" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-1" value="Singleton/KME&#xa;Enclave Manager" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-          <mxGeometry x="120" y="80" width="100" height="300" as="geometry" />
+          <mxGeometry x="120" y="80" width="100" height="590" as="geometry" />
         </mxCell>
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-1" vertex="1">
-          <mxGeometry x="45" y="70" width="10" height="220" as="geometry" />
+          <mxGeometry x="45" y="72" width="10" height="518" as="geometry" />
         </mxCell>
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-4" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-1" vertex="1">
           <mxGeometry x="50" y="120" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-5" value="Singleton/KME&#xa;Trusted Enclave" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-          <mxGeometry x="451" y="80" width="100" height="300" as="geometry" />
+          <mxGeometry x="451" y="80" width="100" height="590" as="geometry" />
         </mxCell>
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-6" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-5" vertex="1">
-          <mxGeometry x="46" y="81" width="10" height="209" as="geometry" />
+          <mxGeometry x="46" y="81" width="10" height="509" as="geometry" />
         </mxCell>
-        <mxCell id="3nuBFxr9cyL0pnOWT2aG-7" value="Return Updated Signup data with new encryption key" style="verticalAlign=bottom;endArrow=open;endSize=8;shadow=0;strokeWidth=1;" parent="1" edge="1">
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-7" value="Return Updated Signup data with new encryption key" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;" parent="1" edge="1" source="3nuBFxr9cyL0pnOWT2aG-5">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="175" y="256.0499999999997" as="targetPoint" />
-            <mxPoint x="500.5" y="256.0499999999997" as="sourcePoint" />
+            <mxPoint x="183" y="256.0499999999997" as="targetPoint" />
+            <mxPoint x="480" y="256" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3nuBFxr9cyL0pnOWT2aG-8" value="Trigger Key refresh" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" parent="1" target="3nuBFxr9cyL0pnOWT2aG-5" edge="1">
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-8" value="Trigger Key refresh" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="175" y="181.0000000000001" as="sourcePoint" />
-            <mxPoint x="437" y="181.0000000000001" as="targetPoint" />
+            <mxPoint x="175" y="194.0000000000001" as="sourcePoint" />
+            <mxPoint x="500.5" y="194.0000000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-NnzcmwlUf4twEH-fe_p-3" value="" style="endArrow=classic;html=1;exitX=0.447;exitY=0.238;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+        <mxCell id="-NnzcmwlUf4twEH-fe_p-3" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="164.70000000000005" y="159.39999999999998" as="sourcePoint" />
-            <mxPoint x="160" y="188" as="targetPoint" />
+            <mxPoint x="-335" y="580" as="sourcePoint" />
+            <mxPoint x="-334" y="600" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="130" y="158" />
-              <mxPoint x="90" y="158" />
-              <mxPoint x="80" y="178" />
-              <mxPoint x="90" y="188" />
-              <mxPoint x="120" y="188" />
+              <mxPoint x="-370" y="580" />
+              <mxPoint x="-370" y="600" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="-NnzcmwlUf4twEH-fe_p-4" value="Read Key refresh interval&lt;br&gt;from config" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" parent="-NnzcmwlUf4twEH-fe_p-3" connectable="0" vertex="1">
+        <mxCell id="-NnzcmwlUf4twEH-fe_p-4" value="Analyse key error" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" parent="-NnzcmwlUf4twEH-fe_p-3" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-30" y="-19" as="offset" />
+            <mxPoint x="-42" y="-20" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-NnzcmwlUf4twEH-fe_p-19" value="" style="endArrow=classic;html=1;exitX=0.56;exitY=0.356;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+        <mxCell id="-NnzcmwlUf4twEH-fe_p-19" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="579" y="186.79999999999995" as="sourcePoint" />
-            <mxPoint x="512" y="210" as="targetPoint" />
+            <mxPoint x="570" y="204" as="sourcePoint" />
+            <mxPoint x="510" y="239" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="500" y="187" />
-              <mxPoint x="602" y="187" />
-              <mxPoint x="572" y="200" />
+              <mxPoint x="501" y="204" />
+              <mxPoint x="570" y="204" />
+              <mxPoint x="570" y="239" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="-NnzcmwlUf4twEH-fe_p-20" value="&lt;div style=&quot;text-align: left&quot;&gt;Perform Key refresh&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;1.Generate new pair of Encryption Keys&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;2. Sign newly generated public Encryption key&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;3. Seal Enclave Data with updated encryption keys&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" parent="-NnzcmwlUf4twEH-fe_p-19" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="140.45" y="-19.93" as="offset" />
+            <mxPoint x="145.45" y="-26.93" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-6" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="178" y="410" as="sourcePoint" />
+            <mxPoint x="498" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="328" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-7" value="Process work order request" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-10" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="465" as="sourcePoint" />
+            <mxPoint x="511" y="435" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="465" />
+              <mxPoint x="580" y="435" />
+              <mxPoint x="530" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-11" value="Decryption of encrypted&lt;br&gt;request hash fails" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="11" y="-34" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-17" value="Throw Crypto Key Error" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="490" as="targetPoint" />
+            <mxPoint x="497.5" y="489.9999999999997" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-18" value="Shared KV" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="-166" y="80" width="100" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-19" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-18">
+          <mxGeometry x="45" y="72" width="10" height="518" as="geometry" />
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-20" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-18">
+          <mxGeometry x="50" y="120" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-21" value="Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="-376" y="80" width="100" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-22" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-21">
+          <mxGeometry x="45" y="72" width="10" height="518" as="geometry" />
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-23" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-21">
+          <mxGeometry x="50" y="120" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-24" value="Worker details" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-316" y="206.99999999999972" as="targetPoint" />
+            <mxPoint x="-120" y="207" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-25" value="Worker Retrieve request" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-320" y="173" as="sourcePoint" />
+            <mxPoint x="-120" y="173" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-26" value="Work order Submit request" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-320" y="360" as="sourcePoint" />
+            <mxPoint x="-120" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-28" value="Client work order request&#xa;with old encryption key" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=0.552;entryY=0.69;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3nuBFxr9cyL0pnOWT2aG-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-110.79999999999995" y="383.1" as="targetPoint" />
+            <mxPoint x="169.99999999999977" y="404.6859999999999" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-29" value="Persist work order&#xa;response with crypto error from Enclave" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=0.552;entryY=0.69;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-109.99999999999996" y="510" as="targetPoint" />
+            <mxPoint x="160" y="510" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-30" value="Work order Get result" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-320" y="529.31" as="sourcePoint" />
+            <mxPoint x="-120" y="529.31" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-31" value="Work order result" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-320" y="559.9999999999998" as="targetPoint" />
+            <mxPoint x="-124" y="560" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-32" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="168" as="sourcePoint" />
+            <mxPoint x="169.99999999999977" y="198" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="140" y="168" />
+              <mxPoint x="120" y="168" />
+              <mxPoint x="120" y="198" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-33" value="Read Key refresh interval&lt;br&gt;from config" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="FY-pfb4IiVx_ic1DrDXL-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-48" y="-28" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-34" value="Worker retrieve for&#xa;the same worker id" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-320" y="610" as="sourcePoint" />
+            <mxPoint x="-120" y="610" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FY-pfb4IiVx_ic1DrDXL-35" value="Worker details with&#xa;updated keys" style="verticalAlign=bottom;endArrow=classicThin;endSize=8;shadow=0;strokeWidth=1;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-320" y="649.9999999999998" as="targetPoint" />
+            <mxPoint x="-124" y="650.0000000000001" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="-NnzcmwlUf4twEH-fe_p-23" value="" style="endArrow=classic;html=1;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="100" y="300" as="sourcePoint" />
-            <mxPoint x="160" y="310" as="targetPoint" />
+            <mxPoint x="162" y="310" as="targetPoint" />
             <Array as="points">
               <mxPoint x="120" y="340" />
-              <mxPoint x="110" y="330" />
-              <mxPoint x="110" y="310" />
+              <mxPoint x="120" y="310" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="-NnzcmwlUf4twEH-fe_p-24" value="Persiist updated&lt;br&gt;Worker details to KV Storage" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" parent="-NnzcmwlUf4twEH-fe_p-23" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-52" y="-34" as="offset" />
+            <mxPoint x="-48" y="-31" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
